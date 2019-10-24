@@ -26,12 +26,12 @@ namespace Unice.Samples.ButtonView
         /// <summary>
         /// Convenience test running flag.
         /// </summary>
-        public bool IsTestRunning { get; set; }
+        bool ITestable.IsTestRunning { get; set; }
         
         [Tooltip("the receiver that will handle main menu outputs in test")]
         public DummySampleButtonCoordinator TestCoordinator;
 
-        public void RunTest()
+        void ITestable.RunTest()
         {
             Controller.Outputs = Controller.Outputs ?? TestCoordinator;
         }
