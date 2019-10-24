@@ -4,7 +4,7 @@ namespace Unice.Samples.ButtonView
 {
     public class DummySampleButtonCoordinator : MonoBehaviour, ISampleButtonCoordination
     {
-        public void OnStartTest()
+        void ISampleButtonCoordination.OnStartTest()
         {
             Debug.Log("DummyCoordinator: Sample button was clicked!");
         }

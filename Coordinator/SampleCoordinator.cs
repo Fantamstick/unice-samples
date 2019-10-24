@@ -17,13 +17,13 @@ namespace Unice.Samples.Coordinator
         /************************************* Test Variables *************************************/
         #if UNITY_EDITOR
 
-        public bool IsTestRunning { get; set; }
+        bool ITestable.IsTestRunning { get; set; }
         
         /// <summary>
         /// Run test. The TestRunner executes this method if it exists in scene.
         /// Otherwise, we wait for the Game coordinator to call RunAsync() for us.
         /// </summary>
-        public void RunTest()
+        void ITestable.RunTest()
         {
             RunAsync().Forget();
         }
@@ -50,7 +50,7 @@ namespace Unice.Samples.Coordinator
             Debug.Log("Coordinator: Sample Button clicked.");
         }
 
-        public void OnStartTest()
+        void ISampleButtonCoordination.OnStartTest()
         {
             isClicked = true;
         }
